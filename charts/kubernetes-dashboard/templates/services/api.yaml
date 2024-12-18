@@ -29,6 +29,7 @@ metadata:
     {{- toYaml . | nindent 4 }}
     {{- end }}
   name: {{ template "kubernetes-dashboard.fullname" . }}-{{ .Values.api.role }}
+  namespace: {{ .Release.Namespace }}
 spec:
   ports:
     - name: {{ .Values.api.role }}
