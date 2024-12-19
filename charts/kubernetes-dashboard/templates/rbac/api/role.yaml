@@ -28,7 +28,6 @@ metadata:
     {{- toYaml . | nindent 4 }}
     {{- end }}
   name: {{ template "kubernetes-dashboard.fullname" . }}-{{ .Values.api.role }}
-  namespace: {{ .Release.Namespace }}
 rules:
     # Allow Dashboard API to get metrics from metrics-scraper.
   - apiGroups: [ "" ]
